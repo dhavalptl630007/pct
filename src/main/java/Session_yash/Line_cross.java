@@ -1,5 +1,6 @@
 package Session_yash;
 
+// check for array declaration
 import java.util.Scanner;
 
 public class Line_cross {
