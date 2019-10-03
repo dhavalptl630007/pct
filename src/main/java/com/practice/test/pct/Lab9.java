@@ -30,7 +30,7 @@ public class Lab9 {
 
 		}
 
-		for (int j = 0; j < 1; j++) {
+		for (int j = 0; j < 5; j++) {
 			String arr[] = sc.nextLine().split("\\s+");
 			start = Character.toString(arr[0].charAt(0));
 			m_path = 2000000;

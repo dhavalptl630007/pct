@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.Scanner;
 
 class Node {
+
+	
 	int data;
 	Node left, right;
 
@@ -105,7 +107,7 @@ public class Lab4_dhaval {
 		if (root == null) {
 			return 0;
 		}
-		rightheight += checkrightheight(root.right);
+                                                                                                                                                                                                                                                            		rightheight += checkrightheight(root.right);
 
 		return rightheight;
 

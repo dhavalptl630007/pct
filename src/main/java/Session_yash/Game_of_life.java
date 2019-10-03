@@ -17,7 +17,7 @@ public class Game_of_life {
   
   int[][] input = new int[row][col];
   curr = new int[row+2][col+2];
-  int[][] future = new int[row][col];
+  int[][] future = new int[row+2][col+2];
   
   for (int i = 0; i<row; i++)
   {
@@ -25,9 +25,9 @@ public class Game_of_life {
 	  
 	  for(int j = 0; j<col;j++)
 	  {	
-       	 input[i][j] = Integer.parseInt(arr[j]); 
+       	 //input[i][j] = Integer.parseInt(arr[j]); 
        	 curr[i+1][j+1]= Integer.parseInt(arr[j]); 
-       	 future[i][j]= input[i][j];
+       	 //future[i+1][j+1]= curr[i+1][j+1];
 	  }
 	
    }
@@ -61,10 +61,12 @@ public class Game_of_life {
   
 private static void simulate(int[][] curr) {
 
+	 int[][] future = new int[row+2][col+2];
 	for (int l = 1; l < row +1 ; l++)
 	  {
 	      for (int m = 1; m<col +1; m++)
 	      {
+	    	  future[l][m] = curr[l][m];
 	    	  
 	         int neigh =0;
 	         
@@ -76,24 +78,25 @@ private static void simulate(int[][] curr) {
 	         // 1 or 0 die
 	    	if (curr[l][m] ==1 && (neigh ==0 ||neigh==1)) 
 	    	{
-	    	    curr[l][m] = 0;
+	    	    future[l][m] = 0;
 	    	}
 	    	//>= 4 then die
 	    	if (curr[l][m] ==1 && (neigh >= 4)) 
 	    	{
-	    	    curr[l][m] = 0;
+	    		 future[l][m] = 0;
 	    	}
 	    	//>= 2 or 3 then survive
 	    	if (curr[l][m] ==1 && (neigh ==2 ||neigh==3)) 
 	    	{
-	    	    curr[l][m] = 1;
+	    		 future[l][m] = 1;
 	    	}
 	    	//empty
 	    	if (curr[l][m] ==0 && (neigh == 3)) 
 	    	{
-	    	    curr[l][m] = 1;
+	    		 future[l][m] = 1;
 	    	}
 	    	
+	     
 	    	
 	      }
 	  
@@ -103,7 +106,8 @@ private static void simulate(int[][] curr) {
 	    {
 	    	for (int j = 1; j<col+1;j++)
 	    	{
-	    		 System.out.print(curr[i][j]+" ");
+	    		 System.out.print(future[i][j]+" ");
+	    		 curr[i][j] = future[i][j];
 	    	}
 	    	
 	    	 System.out.println();	 

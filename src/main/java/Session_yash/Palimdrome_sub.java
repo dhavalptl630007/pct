@@ -17,7 +17,7 @@ public class Palimdrome_sub {
 
 	for (int i = 0 ; i <str.length(); i++)  
 	{
-	   for (int j = i+1 ; j<str.length();j++)
+	   for (int j = i+1 ; j<=str.length();j++)
 	   {
 		  
 		 set.add(str.substring(i, j));
@@ -40,7 +40,7 @@ public class Palimdrome_sub {
 		  
 	      if (len> maxlength)
 	      {
-	        maxlength = len;
+	          maxlength = len;
 	      
 	          f_string = s.toString();     
 	      }

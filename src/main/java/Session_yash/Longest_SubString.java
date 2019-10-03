@@ -14,10 +14,10 @@ public class Longest_SubString {
 	
 	 String f_string = null;
 	 	 
-
+   // all possible substring
 	for (int i = 0 ; i <str.length(); i++)  
 	{
-	   for (int j = i+1 ; j<str.length();j++)
+	   for (int j = i+1 ; j<=str.length();j++)
 	   {
 		  
 		 set.add(str.substring(i, j));
@@ -54,7 +54,7 @@ public class Longest_SubString {
 		
 		 for (int i = 0; i<s.length(); i++)
 		 {
-			for (int j = i+1; j<s.length(); j++) 
+			for (int j = i+1; j<=s.length(); j++) 
 			{
 			 if (s.charAt(i)==s.charAt(j)) 
 			 {
